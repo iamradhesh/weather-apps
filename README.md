@@ -68,3 +68,135 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Sure, I'll create a separate documentation file, typically named `README.md`, which includes detailed documentation for each component and the overall project.
+
+### `README.md`
+
+```markdown
+# Weather App Documentation
+
+This is a simple weather application built using React and Material UI. It allows users to input a city and country to fetch the current weather information using the OpenWeatherMap API.
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Components](#components)
+  - [Home Component](#home-component)
+  - [Form Component](#form-component)
+  - [Information Component](#information-component)
+- [Services](#services)
+  - [API Service](#api-service)
+- [API Key](#api-key)
+
+## Installation
+
+To set up the project locally, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/weather-app.git
+   ```
+   
+2. Navigate to the project directory:
+   ```bash
+   cd weather-app
+   ```
+
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+## Usage
+
+To start the application, run:
+```bash
+npm start
+```
+
+This will run the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Components
+
+### Home Component
+
+`Home.js` is the main component of the application. It sets up the layout and structure for the application and manages the state for weather results.
+
+#### Props
+- **None**
+
+#### State
+- **results**: Holds the weather data fetched from the OpenWeatherMap API.
+
+#### Functions
+- **setResults**: A setter function to update the `results` state.
+
+#### Usage
+The `Home` component renders an `AppBar`, a `Paper` component for the main content, a custom `Form` component for input, and an `Information` component to display the weather data.
+
+### Form Component
+
+`Form.js` is responsible for capturing user input for city and country and triggering the API call to fetch weather data.
+
+#### Props
+- **setResult**: A function passed down from the `Home` component to update the weather data state.
+
+#### State
+- **data**: An object that holds the user inputs for `city` and `country`.
+
+#### Functions
+- **handleChange**: Updates the `data` state based on user input.
+- **getWeatherInfo**: Calls the `getWeather` function from the API service and updates the `results` state with the fetched data.
+
+#### Usage
+The `Form` component includes input fields for the city and country and a button to trigger the weather data fetch.
+
+### Information Component
+
+`Information.js` is used to display the weather data fetched from the API. It shows the location, temperature, humidity, sunrise, sunset, weather condition, cloudiness, and a summary.
+
+#### Props
+- **result**: The weather data object fetched from the OpenWeatherMap API.
+
+#### Functions
+- **None**
+
+#### Usage
+The `Information` component renders a card with various weather details. If no data is present, it displays a default message prompting the user to enter a city or country.
+
+## Services
+
+### API Service
+
+`api.js` contains the function to fetch weather data from the OpenWeatherMap API.
+
+#### Functions
+- **getWeather**: Fetches weather data based on the provided city and country using the OpenWeatherMap API.
+
+#### Usage
+The `getWeather` function is an asynchronous function that makes a GET request to the OpenWeatherMap API and returns the weather data.
+
+## API Key
+
+The API key is a unique identifier used to authenticate requests to the OpenWeatherMap API. Ensure you have a valid API key and replace the placeholder in `api.js` with your actual key:
+
+```javascript
+const API_KEY = `YOUR_API_KEY_HERE`;
+```
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+```
+
+### Explanation of the Documentation
+
+- **Installation**: Provides step-by-step instructions to set up the project locally.
+- **Usage**: Instructions on how to run the application.
+- **Components**: Detailed descriptions of each component, including their props, state, functions, and usage.
+- **Services**: Information about the API service and how it works.
+- **API Key**: Guidance on setting up the API key for the OpenWeatherMap API.
+- **License**: Mentions the license under which the project is distributed.
+
+This documentation will help users understand how to use the application, what each component does, and how to modify or extend the project.
