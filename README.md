@@ -119,7 +119,7 @@ This will run the app in development mode. Open [http://localhost:3000](http://l
 
 ## Components
 
-### Home Component
+### Home Components
 
 `Home.js` is the main component of the application. It sets up the layout and structure for the application and manages the state for weather results.
 
